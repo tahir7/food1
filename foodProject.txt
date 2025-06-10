@@ -1,4 +1,13 @@
+https://www.facebook.com/share/v/15SzXfVfdY/
+
 May 4, 2025
+
+
+https://www.facebook.com/share/r/15kzB2oR5f/
+
+
+
+https://www.facebook.com/share/r/1BbSFvwGTT/
 
 
 react icons 
@@ -6,5 +15,36 @@ npm install react-icons --save
 
 ---------------
 
+menu
+id
+dish name 
+size
+price
 
+--- picture in public folder
 
+npm i prisma
+
+npx prisma init
+
+-----------
+or create a new repository on the command line
+echo "# food1" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/tahir7/food1.git
+git push -u origin main
+
+--------
+…or push an existing repository from the command line
+git remote add origin https://github.com/tahir7/food1.git
+git branch -M main
+git push -u origin main
+
+--------------------------------
+
+https://magicstudio.com/ai-art-generator/
+
+The _app.js does not exist within the context of the app router. The equivalent of _app.js is app/layout.js.

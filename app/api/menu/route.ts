@@ -34,3 +34,17 @@ export  async function POST(request : NextRequest) {
     return  NextResponse.json(body);
     
 }
+
+export async function  GET(request : NextRequest) {
+    
+    const resp = await prisma.menu.findMany()
+
+    return NextResponse.json("A")
+    // return NextResponse.json(resp);
+
+    // return resp.map(i=>
+    // {
+    //     i.dishname + "<br>"
+    // }
+    // )
+}
