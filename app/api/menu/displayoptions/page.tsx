@@ -1,12 +1,12 @@
 import { prisma } from '@/prisma/client'
 import React from 'react'
 import Image from 'next/image';
-import biryani from "../displaymenu/biryani.png";
-import chickenkarahi from "../displaymenu/chickenkarhari.png"
-import roghniNaan from "../displaymenu/roghniNaan.png"
+import biryani from "../displayoptions/biryani.png";
+import chickenkarahi from "../displayoptions/chickenkarhari.png"
+import roghniNaan from "../displayoptions/roghniNaan.png"
 import Pagination from '@/app/components/pagination';
 import { number } from 'zod';
-import { Flex, Grid } from '@radix-ui/themes';
+import { Card, Flex, Grid } from '@radix-ui/themes';
 
 interface Props {
     searchParams : { page : string }
@@ -19,7 +19,10 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
 
     }
 
-    const page = parseInt(searchParams.page) || 1;
+    
+
+    const page = parseInt( searchParams.page) || 1;
+    console.log("page :: ", page)
     const pageSize = 3;
 
     const response = await prisma.menu.findMany( {
@@ -27,12 +30,14 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
         take: pageSize
     });
 
+    const colors = ["bg-amber-350", "bg-amber-660", "bg-gray-450", "bg-amber-250", "bg-yellow-250", "bg-lime-200", "bg-lime-500"]
+
     const totalitems = await prisma.menu.count() ;
     return (
 
         <div>
        
-         <Grid columns={{ initial: "1", xs: "3" }} gap="3" width="auto">
+         <Grid columns={{ initial: "1", xs: "3" }} gap="2" width="auto" className='mx-6'>
 
            
             {/* https://v1.tailwindcss.com/components/cards */}
@@ -40,14 +45,18 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
             {
                 response.map(i =>
 
-                   
+                  
 
-                    <div key={i.id} className="max-w-sm rounded overflow-hidden shadow-lg">
+                    <div key={i.id} className={`max-w-sm rounded overflow-hidden shadow-lg`}>
+                    
+                    {/* ${ Math.floor(Math.random() * 6) + 1 } */}
 
+                    
                         {
                             i.id === 1 ?
 
-                                <div className="max-w-sm rounded overflow-hidden shadow-lg  relative  w-full h-50 px-1 py-1">
+                                <div className={`max-w-sm rounded overflow-hidden shadow-lg  relative  w-full h-50 px-1 py-1 `                                   
+                                    }>
                                     <Image
                                         src={biryani}
                                         alt="Profile Picture"
@@ -56,7 +65,8 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         // width={250}
                                         // height={200}
-                                        className="object-cover rounded-lg px-2" // Apply rounded corners using Tailwind
+                                        
+                                        className="object-cover rounded-lg px-2 " // Apply rounded corners using Tailwind
 
                                     //   sizes='115vw'
                                     // style={{objectFit: 'cover' }}
@@ -66,7 +76,7 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
                                 ""}
                         {
                             i.id === 2 ?
-                                <div className="max-w-sm rounded overflow-hidden shadow-lg  relative  w-full h-50 px-1 py-1">
+                                <div className={`max-w-sm rounded overflow-hidden shadow-lg  relative  w-full h-50 px-1 py-1`}>
                                     <Image
                                         src={roghniNaan}
                                         alt="Profile Picture"
@@ -85,7 +95,7 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
                                 ""}
 
                         { i.id === 3 ?
-                        <div className="max-w-sm rounded overflow-hidden shadow-lg  relative  w-full h-50 px-1 py-1">
+                        <div className={`max-w-sm rounded overflow-hidden shadow-lg  relative  w-full h-50 px-1 py-1`}>
                             <Image
                                 src={chickenkarahi}
                                 alt="Profile Picture"
@@ -117,7 +127,7 @@ const displayAllMenuItems = async ({searchParams } : Props) => {
 
                         
                     </div>
-                   
+                
                 )                
             }
 

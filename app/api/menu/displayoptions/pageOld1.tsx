@@ -1,9 +1,9 @@
 import { prisma } from '@/prisma/client'
 import React from 'react'
 import Image from 'next/image';
-import biryani from "../displaymenu/biryani.png";
-import chickenkarahi from "../displaymenu/chickenkarhari.png"
-import roghniNaan from "../displaymenu/roghniNaan.png"
+import biryani from "../displayoptions/biryani.png";
+import chickenkarahi from "../displayoptions/chickenkarhari.png"
+import roghniNaan from "../displayoptions/roghniNaan.png"
 import Pagination from '@/app/components/pagination';
 import { number } from 'zod';
 import { Flex, Grid } from '@radix-ui/themes';

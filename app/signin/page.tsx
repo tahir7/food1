@@ -19,7 +19,7 @@ export default function SignIn() {
     >
 
 <Card className='border: "black" shadow : "4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38)"  borderRadius: 16,
- backgroundColor: "transparent"'>
+ backgroundColor: "transparent" mt-6'>
 
       <Flex direction='column' gap="3" align="center">
 

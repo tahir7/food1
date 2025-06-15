@@ -33,7 +33,7 @@ const Pagination = ({itemCount,  pageSize, currentPage } :props) => {
    }
 
   return (
-    <Flex align="center" gap="3">
+    <Flex align="center" gap="3" className='mx-3'>
     <Text size="3">Page  {currentPage} of { pageCount} </Text>
     <Button color='gray' variant='soft' disabled = { currentPage === 1 }
         onClick={() => changePage(1)}>

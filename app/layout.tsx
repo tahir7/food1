@@ -5,6 +5,7 @@ import "./globals.css";
 import NavBar from "./components/navbar";
 import "@radix-ui/themes/styles.css";
 import { Theme, ThemePanel } from "@radix-ui/themes";
+import AuthProvider from "./auth/AuthProvider";
 
 
 
@@ -32,16 +33,23 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ml-10 mr-10`}
+        style={{background : "#76e98999"}}
       >
-       <Theme accentColor="green" grayColor="gray" panelBackground="solid" radius="full">
+
+<AuthProvider> 
+       <Theme accentColor="green" grayColor="gray" panelBackground="translucent" radius="full"
+       
+        >
+
+       
           <NavBar />
-          <main>
+          <main >
             {children}
           </main>
 
           {/* <ThemePanel /> */}
         </Theme>
-
+        </AuthProvider>
       </body>
     </html>
   );
