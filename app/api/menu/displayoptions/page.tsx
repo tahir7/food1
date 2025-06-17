@@ -22,6 +22,8 @@ interface d {
 
 const displayAllMenuItems = async ({ searchParams }: Props) => {
 
+    // const searchParams1 = await searchParams;
+
     const handlePageChange = (page: number) => {
         console.log(page)
 
@@ -29,7 +31,8 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
 
 
 
-    const page = parseInt(searchParams.page) || 1;
+    const page = await parseInt(searchParams.page) || 1;
+
     console.log("page :: ", page)
     const pageSize = 3;
 
@@ -50,7 +53,9 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
 
     // const totalitems = await prisma.menu.count();
 
-    const totalitems =  response1.length; 
+    const totalitems =   response.length; 
+
+    // console.log("totalitems ::  ",totalitems)
 
     return (
 
@@ -162,7 +167,7 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
         </div>
 
     )
-}
+} 
 
 export default displayAllMenuItems
 
