@@ -19,6 +19,7 @@ const NavBar = () => {
         { label: "Home", href: "/" },
         { label: "Food Options", href: "/api/menu/displayoptions" },
         { label: "My Cart", href: "/cart" },
+        { label: "About us", href: "/aboutus/" },
         // { label: "Login", href: "/api/auth/signin" }
 
     ];
@@ -33,7 +34,7 @@ const NavBar = () => {
 
                 <Flex justify="between">
                     <Flex align="center" gap="2">
-                        <ul className="flex  space-x-8">
+                        <ul className="flex  space-x-8"  >
                             {
                                 links.map(l =>
 
@@ -46,6 +47,7 @@ const NavBar = () => {
                                                     'hover:text-zinc-950 transition-colors': true
                                                 })
                                             }
+                                            style={{color : '#674D41'}}
                                             href={l.href}
                                         >
                                             {l.label}

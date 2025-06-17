@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE `menu` MODIFY `size` INTEGER NOT NULL DEFAULT 1;
