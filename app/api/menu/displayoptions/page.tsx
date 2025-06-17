@@ -1,4 +1,3 @@
-import { prisma } from '@/prisma/client'
 import React from 'react'
 import Image from 'next/image';
 import biryani from "../displayoptions/biryani.png";
@@ -49,7 +48,10 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
 
     const colors = ["bg-amber-350", "bg-amber-660", "bg-gray-450", "bg-amber-250", "bg-yellow-250", "bg-lime-200", "bg-lime-500"]
 
-    const totalitems = await prisma.menu.count();
+    // const totalitems = await prisma.menu.count();
+
+    const totalitems =  response1.length; 
+
     return (
 
         <div>
