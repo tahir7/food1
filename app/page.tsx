@@ -67,7 +67,7 @@ export default function Home() {
           >
             At Lunchbox delivery, we bring you delicious, 100% halal, home-cooked meals made with love, care,
             and tradition. Whether you're craving a comforting biryani, a rich curry, or healthy homemade snacks.
-            we`&apos;`ve got you covered.
+            we have got you covered.
 
           </Text>
 
