@@ -10,7 +10,7 @@ import getData from '../../data/page';
 import data from '../../data/data';
 
 interface Props {
-    searchParams: { page: string }
+    searchParams: Promise <{ page: string }>
 }
 
 interface d {
@@ -22,18 +22,23 @@ interface d {
 
 const displayAllMenuItems = async ({ searchParams }: Props) => {
 
-    // const searchParams1 = await searchParams;
+    // const { page } = await searchParams;
 
-    const handlePageChange = (page: number) => {
-        console.log(page)
+    const handlePageChange = (page1: number) => {
+        console.log(page1)
 
     }
 
 
 
-    const page = await parseInt(searchParams.page) || 1;
+    // const page =  await parseInt( searchParams.page) || 1;
 
+    const page =  parseInt( (await searchParams).page) || 1;
+
+    
+   
     console.log("page :: ", page)
+
     const pageSize = 3;
 
     // const response = await prisma.menu.findMany( {
