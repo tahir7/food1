@@ -1,11 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
-import React from 'react'
 
-interface d  {
-        id: number;
-        dishname: string;
-        price: number;
-        size : number
+interface d {
+  id: number;
+  dishname: string;
+  price: number;
+  size: number
 }
 
 
@@ -22,16 +20,16 @@ const dishes: d[] = [
 
 export default function data() {
 
-console.log("dishes  .... ");
+  console.log("dishes  .... ");
 
-//   return NextResponse.json(dishes.toString) ;
+  //   return NextResponse.json(dishes.toString) ;
 
-// let a = JSON.stringify(dishes)
+  // let a = JSON.stringify(dishes)
 
 
-return JSON.parse(JSON.stringify(dishes))
+  return JSON.parse(JSON.stringify(dishes))
 
-// return NextResponse.json([  { id: 1, name:"SA" }, { id: 2, name: "Daas" } ]);
+  // return NextResponse.json([  { id: 1, name:"SA" }, { id: 2, name: "Daas" } ]);
 }
 
 

@@ -4,13 +4,11 @@ import biryani from "../displayoptions/biryani.png";
 import chickenkarahi from "../displayoptions/chickenkarhari.png"
 import roghniNaan from "../displayoptions/roghniNaan.png"
 import Pagination from '@/app/components/pagination';
-import { number } from 'zod';
-import { Card, Flex, Grid } from '@radix-ui/themes';
-import getData from '../../data/page';
+import { Grid } from '@radix-ui/themes';
 import data from '../../data/data';
 
 interface Props {
-    searchParams: Promise <{ page: string }>
+    searchParams: Promise<{ page: string }>
 }
 
 interface d {
@@ -22,45 +20,30 @@ interface d {
 
 const displayAllMenuItems = async ({ searchParams }: Props) => {
 
-    // const { page } = await searchParams;
-
-    const handlePageChange = (page1: number) => {
-        console.log(page1)
-
-    }
-
-
 
     // const page =  await parseInt( searchParams.page) || 1;
 
-    const page =  parseInt( (await searchParams).page) || 1;
+    const page = parseInt((await searchParams).page) || 1;
 
-    
-   
+
+
     console.log("page :: ", page)
 
     const pageSize = 3;
 
-    // const response = await prisma.menu.findMany( {
-    //     skip : (page -1) * pageSize,
-    //     take: pageSize
-    // });
+
 
     const response: d[] = await data();
 
-    //  array.slice(startIndex, endIndex);
-    // startIndex: The index to start the slice from (inclusive).
-    // endIndex: The index to end the slice at (exclusive).
 
     const response1 = response.slice((page - 1) * pageSize, page * pageSize);
 
-    const colors = ["bg-amber-350", "bg-amber-660", "bg-gray-450", "bg-amber-250", "bg-yellow-250", "bg-lime-200", "bg-lime-500"]
 
-    // const totalitems = await prisma.menu.count();
 
-    const totalitems =   response.length; 
 
-    // console.log("totalitems ::  ",totalitems)
+    const totalitems = response.length;
+
+
 
     return (
 
@@ -69,7 +52,7 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
             <Grid columns={{ initial: "1", xs: "3" }} gap="2" width="auto" className='mx-6 mt-10'>
 
 
-                {/* https://v1.tailwindcss.com/components/cards */}
+
 
                 {
                     response1.map(i =>
@@ -78,7 +61,6 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
 
                         <div key={i.id} className={`max-w-sm rounded overflow-hidden shadow-lg `}>
 
-                            {/* ${ Math.floor(Math.random() * 6) + 1 } */}
 
 
                             {
@@ -172,7 +154,7 @@ const displayAllMenuItems = async ({ searchParams }: Props) => {
         </div>
 
     )
-} 
+}
 
 export default displayAllMenuItems
 

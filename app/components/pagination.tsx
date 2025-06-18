@@ -1,6 +1,6 @@
 'use client'
 import { Button, Flex } from '@radix-ui/themes';
-import React, { use } from 'react'
+import React from 'react'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx';
 import { Text } from '@radix-ui/themes';

@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Container, Grid, Heading, Text } from "@radix-ui/themes";
 import Image from 'next/image';
 import mixdishes from "./mixdishes.png"
 import Link from "next/link";
@@ -67,7 +67,7 @@ export default function Home() {
           >
             At Lunchbox delivery, we bring you delicious, 100% halal, home-cooked meals made with love, care,
             and tradition. Whether you're craving a comforting biryani, a rich curry, or healthy homemade snacks.
-            we’ve got you covered.
+            we`&apos;`ve got you covered.
 
           </Text>
 

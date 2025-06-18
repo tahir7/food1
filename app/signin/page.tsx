@@ -1,11 +1,9 @@
 "use client";
-import { Badge, Button, Card, Flex, Heading, HoverCard, Text, } from '@radix-ui/themes'
+import { Badge, Button, Card, Flex, Heading, Text, } from '@radix-ui/themes'
 import React from 'react'
 import { signIn } from "next-auth/react"
-import { PiGoogleLogo } from 'react-icons/pi';
 import googlelogo from "../signin/googlelogo.png"
 import Image from 'next/image';
-import { BiColor } from 'react-icons/bi';
 
 
 export default function SignIn() {
