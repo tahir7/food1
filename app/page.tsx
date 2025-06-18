@@ -1,14 +1,14 @@
 import { Box, Container, Flex, Grid, Heading, Text } from "@radix-ui/themes";
-import Pagination from "./components/pagination";
 import Image from 'next/image';
 import mixdishes from "./mixdishes.png"
 import Link from "next/link";
-import classNames from "classnames";
 
 
-export default function Home({ searchParams }: { searchParams: { page: string } }) {
+// export default function Home({ searchParams }: { searchParams: { page: string } }) {
 
- 
+
+export default function Home() {
+
   return (
 
     <Container>
@@ -35,8 +35,6 @@ export default function Home({ searchParams }: { searchParams: { page: string } 
 
       <Grid columns={{ initial: "1", xs: "2" }} gap="4" width="auto" className='mx-10 ml-20 mt-10 ' >
         {/* <Flex align="center"> */}
-
-
 
         <div>
 
@@ -97,12 +95,14 @@ export default function Home({ searchParams }: { searchParams: { page: string } 
       </Grid>
 
       <div style={{ textEmphasis: "red" }}>
-        <Link href="/api/menu/displayoptions"
-        className="hover:bg-yellow-200"
-         
 
-          style = {{ color: "red"}}
-        > Explore Available Options </Link>
+        <Link href="/api/menu/displayoptions"
+          className="hover:bg-yellow-200"
+          style={{ color: "red" }}
+        > 
+            Explore Available Options 
+        </Link>
+        
       </div>
 
     </Container>
